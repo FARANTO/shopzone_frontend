@@ -75,3 +75,4 @@ The frontend is intentionally written so the demo/localStorage logic can later b
 - Email service -> order confirmation/notifications.
 
 No real payment credentials or production authentication are included in this prototype.
+"# shopzone_frontend" 
