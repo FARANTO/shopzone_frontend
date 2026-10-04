@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product - ShopZone</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="top-header">
+    <a class="logo" href="index.html">shop<span>zone</span></a>
+    <div class="deliver"><span class="small">Deliver to</span><strong>📍 Bangladesh</strong></div>
+    <div class="search-box"><select id="categorySelect"><option value="all">All</option><option value="electronics">Electronics</option><option value="beauty">Beauty</option><option value="fashion">Fashion</option><option value="toys">Toys</option></select><input id="searchInput" type="search" placeholder="Search ShopZone" /><button id="searchBtn">🔍</button></div>
+    <div class="header-links">
+      <a href="admin.html" class="admin-link"><span class="small">Manage</span><strong>Admin</strong></a>
+      <a href="signin.html" class="account-link"><span class="small">Hello, sign in</span><strong>Account &amp; Lists</strong></a>
+      <a href="cart.html" class="cart-link">🛒 <strong>Cart</strong></a>
+      <button class="theme-toggle" id="themeToggle" title="Switch theme">🌙</button>
+    </div>
+  </header>
+  <nav class="sub-nav"><button id="menuBtn" class="menu-btn">☰ All</button><a href="index.html#deals">Today's Deals</a><a href="index.html#categories">Categories</a><a href="index.html#products">Products</a><a href="admin.html">Admin Dashboard</a></nav>
+
+  <main class="product-detail-page">
+    <div class="breadcrumbs"><a href="index.html">Home</a> / <span id="breadcrumbName">Product</span></div>
+    <section class="product-detail-card">
+      <div class="product-gallery"><div id="productImage" class="detail-image"></div></div>
+      <div class="product-info">
+        <h1 id="productName">Product</h1>
+        <p id="productDescription" class="product-description"></p>
+        <div class="detail-rating">★★★★★ <span>4.6 (128 ratings)</span></div>
+        <div id="productPrice" class="detail-price"></div>
+        <hr />
+        <div class="option-group"><label>Size</label><div id="sizeOptions" class="option-row"></div></div>
+        <div class="option-group"><label>Color</label><div id="colorOptions" class="color-row"></div></div>
+        <div class="option-group"><label>Quantity</label><div class="quantity-control"><button id="qtyMinus">−</button><span id="qtyValue">1</span><button id="qtyPlus">+</button></div></div>
+        <button id="addToCart" class="primary-action">＋ Add to Cart</button>
+        <button id="buyNow" class="secondary-action">🛒 Buy this Item</button>
+        <div class="payment-badges"><span>VISA</span><span>Mastercard</span><span>Stripe</span><span>COD</span></div>
+        <p class="purchase-note">By clicking Buy Now, you agree to our Terms and Conditions and Privacy Policy. Payment and order processing will be connected to the backend later.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><button class="back-top" id="backTop">Back to top</button><div class="footer-main"><div><h3>Get to Know Us</h3><a href="#">About ShopZone</a><a href="#">Careers</a><a href="#">Press Releases</a></div><div><h3>Make Money with Us</h3><a href="#">Sell products</a><a href="#">Become a partner</a><a href="#">Advertise</a></div><div><h3>Customer Service</h3><a href="#">Help Center</a><a href="#">Returns</a><a href="#">Shipping</a></div><div><h3>Let Us Help You</h3><a href="signin.html">Your Account</a><a href="cart.html">Your Orders</a><a href="#">Payment Options</a></div></div><div class="footer-bottom"><div class="footer-logo">shop<span>zone</span></div><p>© 2026 ShopZone. Educational e-commerce prototype.</p></div></footer>
+  <div id="toast" class="toast"></div>
+  <script src="js/script.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

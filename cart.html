@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart - ShopZone</title><link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="top-header"><a class="logo" href="index.html">shop<span>zone</span></a><div class="deliver"><span class="small">Deliver to</span><strong>📍 Bangladesh</strong></div><div class="search-box"><input id="searchInput" type="search" placeholder="Search ShopZone" /><button id="searchBtn">🔍</button></div><div class="header-links"><a href="admin.html" class="admin-link"><span class="small">Manage</span><strong>Admin</strong></a><a href="signin.html" class="account-link"><span class="small">Hello, sign in</span><strong>Account &amp; Lists</strong></a><a href="cart.html" class="cart-link">🛒 <strong>Cart <span id="cartCount">0</span></strong></a><button class="theme-toggle" id="themeToggle">🌙</button></div></header>
+<nav class="sub-nav"><a href="index.html">Home</a><a href="index.html#deals">Today's Deals</a><a href="index.html#products">Products</a><a href="admin.html">Admin Dashboard</a></nav>
+
+<main class="checkout-page">
+  <h1>Your Shopping Cart</h1>
+  <div class="checkout-steps"><div class="step active" data-step="1"><b>1</b><span>Shopping Cart</span></div><div class="step" data-step="2"><b>2</b><span>Shipping Address</span></div><div class="step" data-step="3"><b>3</b><span>Payment Method</span></div></div>
+
+  <div id="checkoutStep1" class="checkout-layout">
+    <section class="checkout-card"><h2>Shopping Cart</h2><div id="cartItems"></div><div id="emptyCart" class="empty-cart" hidden>Your cart is empty. <a href="index.html">Continue shopping →</a></div></section>
+    <aside class="summary-card"><h2>Cart Details</h2><div class="summary-line"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><div class="summary-line discount"><span>Discount</span><strong id="discount">-$0.00</strong></div><div class="summary-line"><span>Shipping Fee</span><strong id="shipping">$0.00</strong></div><hr /><div class="summary-line total"><span>Total</span><strong id="total">$0.00</strong></div><button id="toAddress" class="primary-action">Continue →</button></aside>
+  </div>
+
+  <div id="checkoutStep2" class="checkout-layout" hidden>
+    <section class="checkout-card"><h2>Shipping Address</h2><form id="addressForm" class="checkout-form"><label>Name<input name="name" required placeholder="John Doe" /></label><label>Email<input name="email" type="email" required placeholder="john@example.com" /></label><label>Phone<input name="phone" required placeholder="0123456789" /></label><label>Address<input name="address" required placeholder="123 Main St, Dhaka" /></label><label>City<input name="city" required placeholder="Dhaka" /></label><div class="checkout-buttons"><button type="button" id="backToCart" class="secondary-action">← Back</button><button type="submit" class="primary-action">Continue →</button></div></form></section>
+    <aside class="summary-card"><h2>Cart Details</h2><div class="summary-line"><span>Subtotal</span><strong class="subtotal-copy">$0.00</strong></div><div class="summary-line discount"><span>Discount</span><strong class="discount-copy">-$0.00</strong></div><div class="summary-line"><span>Shipping Fee</span><strong class="shipping-copy">$0.00</strong></div><hr /><div class="summary-line total"><span>Total</span><strong class="total-copy">$0.00</strong></div></aside>
+  </div>
+
+  <div id="checkoutStep3" class="checkout-layout" hidden>
+    <section class="checkout-card"><h2>Payment Method</h2><p class="muted">Choose a payment method for this demo checkout.</p><div class="payment-methods"><label class="payment-option"><input type="radio" name="payment" value="card" checked /><span>💳 Credit / Debit Card</span></label><label class="payment-option"><input type="radio" name="payment" value="stripe" /><span>🟣 Stripe</span></label><label class="payment-option"><input type="radio" name="payment" value="cod" /><span>💵 Cash on Delivery</span></label></div><div class="checkout-buttons"><button id="backToAddress" class="secondary-action">← Back</button><button id="placeOrder" class="primary-action">Place Order ✓</button></div></section>
+    <aside class="summary-card"><h2>Order Total</h2><div class="summary-line"><span>Subtotal</span><strong class="subtotal-copy">$0.00</strong></div><div class="summary-line discount"><span>Discount</span><strong class="discount-copy">-$0.00</strong></div><div class="summary-line"><span>Shipping Fee</span><strong class="shipping-copy">$0.00</strong></div><hr /><div class="summary-line total"><span>Total</span><strong class="total-copy">$0.00</strong></div></aside>
+  </div>
+
+  <div id="orderSuccess" class="order-success" hidden><div class="success-icon">✓</div><h2>Order placed successfully!</h2><p>Your demo order has been created. In the full system this is where the Order and Payment services would process the transaction.</p><a href="index.html" class="primary-action inline-button">Continue Shopping</a></div>
+</main>
+<footer><div class="footer-main"><div><h3>ShopZone</h3><a href="index.html">Homepage</a><a href="#">Contact</a></div><div><h3>Products</h3><a href="index.html#products">All Products</a><a href="#">New Arrivals</a></div><div><h3>Company</h3><a href="#">About</a><a href="#">Privacy</a></div><div><h3>Account</h3><a href="signin.html">Sign In</a><a href="admin.html">Admin</a></div></div><div class="footer-bottom"><div class="footer-logo">shop<span>zone</span></div><p>© 2026 ShopZone. Educational e-commerce prototype.</p></div></footer>
+<div id="toast" class="toast"></div><script src="js/script.js"></script><script src="js/cart.js"></script>
+</body></html>
