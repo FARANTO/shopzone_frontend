@@ -1,5 +1,7 @@
 # ShopZone — Amazon-like E-Commerce Frontend Prototype
 
+Live Link -  https://faranto.github.io/shopzone_frontend/
+
 This version expands the original frontend prototype into a small multi-page e-commerce experience.
 
 ## Pages
