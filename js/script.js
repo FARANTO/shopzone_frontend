@@ -7,19 +7,6 @@
   document.querySelectorAll('#themeToggle').forEach(b=>b.addEventListener('click',toggleTheme));updateThemeButton();
   window.showToast=function(message){const t=document.getElementById('toast');if(!t)return;t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)};
   const count=document.getElementById('cartCount');if(count){const cart=JSON.parse(localStorage.getItem('shopzoneCart')||'[]');count.textContent=cart.reduce((s,x)=>s+x.quantity,0)}
-  const headerLinks=document.querySelector('.header-links');
-  if(headerLinks){
-    [['buyer.html','Buyer Side'],['seller.html','Seller Side']].forEach(([href,label])=>{
-      if(!headerLinks.querySelector(`a[href="${href}"]`)){
-        const link=document.createElement('a');
-        link.href=href;
-        link.textContent=label;
-        link.className='portal-nav-link';
-        const adminLink=headerLinks.querySelector('.admin-link,a[href="admin.html"]');
-        headerLinks.insertBefore(link,adminLink||headerLinks.firstChild);
-      }
-    });
-  }
   const searchInput=document.getElementById('searchInput');const category=document.getElementById('categorySelect');const searchBtn=document.getElementById('searchBtn');
   function search(){if(!searchInput)return;const q=searchInput.value.trim().toLowerCase();const c=category?category.value:'all';document.querySelectorAll('.category-card,.product-card').forEach(card=>{const okText=!q||card.textContent.toLowerCase().includes(q);const okCat=c==='all'||card.dataset.category===c;card.style.display=okText&&okCat?'':'none'});if(q||c!=='all')showToast('Search/filter applied.')}
   searchBtn?.addEventListener('click',search);searchInput?.addEventListener('keydown',e=>{if(e.key==='Enter')search()});
