@@ -1,5 +1,6 @@
 .portal-page{max-width:1180px;padding:30px 18px 55px}
 .buyer-welcome{display:flex;flex-direction:column;gap:3px}
+.portal-nav-link{white-space:nowrap}
 .portal-hero,.portal-panel{background:var(--card);box-shadow:var(--shadow);padding:24px;margin-bottom:20px}
 .portal-hero{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(120deg,#f8fbff,#e6f4f4)}
 [data-theme="dark"] .portal-hero{background:linear-gradient(120deg,#18212b,#20323a)}

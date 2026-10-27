@@ -1,11 +1,4 @@
 (() => {
-  const session = JSON.parse(localStorage.getItem('shopzoneUser') || 'null');
-  if (!session || session.role !== 'seller') {
-    document.getElementById('sellerGate').hidden = false;
-    return;
-  }
-  document.getElementById('sellerDashboard').hidden = false;
-
   const storageKey = 'shopzoneSellerListings';
   const form = document.getElementById('sellerListingForm');
   const body = document.getElementById('sellerListings');

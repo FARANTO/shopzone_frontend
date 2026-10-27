@@ -12,8 +12,8 @@ product.html     -> Dynamic product detail page (`?id=1`, `?id=2`, etc.)
 signin.html      -> Sign-in page
 cart.html        -> 3-step shopping cart / checkout
 admin.html       -> Admin dashboard panel
-buyer.html       -> Buyer Hub (requires demo Buyer sign-in)
-seller.html      -> Marketplace Seller Portal (requires demo Seller sign-in)
+buyer.html       -> Buyer Hub (open prototype, no sign-in required)
+seller.html      -> Marketplace Seller Portal (open prototype, no sign-in required)
 ```
 
 ## Main features
@@ -36,7 +36,7 @@ seller.html      -> Marketplace Seller Portal (requires demo Seller sign-in)
 - Product/order/payment/admin actions are frontend prototypes and can later connect to the microservices project.
 - Buyer Hub (`buyer.html`) provides browser-only product discovery, a buyer account gate, cart summary, demo orders, and shipment milestone previews.
 - Seller Portal (`seller.html`) compares third-party marketplace and direct-vendor models, and provides local marketplace listing management with seller-set prices, stock, and FBA/FBM fulfillment choices. Seller listings are visible in Buyer Hub discovery.
-- Demo sign-in offers Buyer and Marketplace Seller roles and saves the selected role in `localStorage`; it is not authentication or authorization.
+- Demo sign-in remains optional; the Buyer Hub and Seller Portal are directly accessible without choosing a role.
 - Search ranking, inventory reservation, payment, orders, and fulfillment notifications are simulated in the browser. No Elasticsearch/OpenSearch, Redis, payment gateway, warehouse, carrier, email/SMS, or Kafka service is connected.
 
 ## Run locally

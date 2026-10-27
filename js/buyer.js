@@ -1,14 +1,6 @@
 (() => {
   const session = JSON.parse(localStorage.getItem('shopzoneUser') || 'null');
-  const gate = document.getElementById('buyerGate');
-  const dashboard = document.getElementById('buyerDashboard');
-  if (!session || session.role !== 'buyer') {
-    gate.hidden = false;
-    return;
-  }
-
-  dashboard.hidden = false;
-  document.getElementById('buyerGreeting').textContent = session.name ? `Hi, ${session.name}` : 'Welcome back';
+  document.getElementById('buyerGreeting').textContent = session?.name ? `Hi, ${session.name}` : 'Welcome';
 
   const products = [
     { id: 1, name: 'Smartphone', category: 'electronics', price: 299.99, detail: 'Bright display · everyday performance', likelihood: 5 },

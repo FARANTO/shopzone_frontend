@@ -7,17 +7,16 @@
   document.querySelectorAll('#themeToggle').forEach(b=>b.addEventListener('click',toggleTheme));updateThemeButton();
   window.showToast=function(message){const t=document.getElementById('toast');if(!t)return;t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)};
   const count=document.getElementById('cartCount');if(count){const cart=JSON.parse(localStorage.getItem('shopzoneCart')||'[]');count.textContent=cart.reduce((s,x)=>s+x.quantity,0)}
-  const signedInUser=JSON.parse(localStorage.getItem('shopzoneUser')||'null');
-  const hiddenLinks=signedInUser?.role==='seller'?['buyer.html','admin.html']:signedInUser?.role==='buyer'?['seller.html']:[];
-  document.querySelectorAll('.top-header a[href],.sub-nav a[href]').forEach(link=>{
-    if(hiddenLinks.includes(link.getAttribute('href')))link.remove();
-  });
-  const nav=document.querySelector('.sub-nav');
-  if(nav){
-    const currentPage=location.pathname.split('/').pop();
-    [['buyer.html','Buyer Hub'],['seller.html','Seller Portal']].forEach(([href,label])=>{
-      if(!hiddenLinks.includes(href)&&href!==currentPage&&!nav.querySelector(`a[href="${href}"]`)){
-        const link=document.createElement('a');link.href=href;link.textContent=label;nav.appendChild(link);
+  const headerLinks=document.querySelector('.header-links');
+  if(headerLinks){
+    [['buyer.html','Buyer Side'],['seller.html','Seller Side']].forEach(([href,label])=>{
+      if(!headerLinks.querySelector(`a[href="${href}"]`)){
+        const link=document.createElement('a');
+        link.href=href;
+        link.textContent=label;
+        link.className='portal-nav-link';
+        const adminLink=headerLinks.querySelector('.admin-link,a[href="admin.html"]');
+        headerLinks.insertBefore(link,adminLink||headerLinks.firstChild);
       }
     });
   }
