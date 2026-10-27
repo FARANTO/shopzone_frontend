@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Portal - ShopZone</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portals.css" />
+</head>
+<body>
+  <header class="top-header">
+    <a class="logo" href="index.html">shop<span>zone</span></a>
+    <div class="buyer-welcome"><span class="small">Marketplace seller</span><strong>Seller Portal</strong></div>
+    <div class="header-links"><a href="buyer.html">Buyer Hub</a><a href="admin.html">Admin</a><button class="theme-toggle" id="themeToggle" title="Switch light/dark mode">🌙</button></div>
+  </header>
+  <nav class="sub-nav"><a href="index.html">Storefront</a><a href="#seller-overview">Overview</a><a href="#seller-models">Marketplace vs. Vendor</a><a href="#catalog">Catalog &amp; inventory</a><a href="buyer.html">Buyer Hub</a></nav>
+
+  <main class="portal-page">
+    <section id="sellerGate" class="portal-panel access-panel" hidden>
+      <p class="eyebrow">SHOPZONE MARKETPLACE</p>
+      <h1>Sign in to your Seller Portal</h1>
+      <p class="muted">Use the demo sign-in and choose the Marketplace Seller account type to manage local demo listings.</p>
+      <a class="primary-action inline-button" href="signin.html?role=seller">Sign in as a seller</a>
+    </section>
+    <div id="sellerDashboard" hidden>
+    <section class="portal-hero seller-hero">
+      <div><p class="eyebrow">THIRD-PARTY MARKETPLACE</p><h1>Your business, your listings.</h1><p>Set your prices, maintain catalog and stock, and choose who fulfills each order.</p></div>
+      <span class="prototype-chip">Browser demo · not a live marketplace</span>
+    </section>
+    <section class="seller-model-grid" id="seller-overview">
+      <article class="portal-panel"><span class="model-icon">🏪</span><h2>Marketplace seller</h2><p>You are the merchant of record for your offer. Control listing price and stock; this prototype stores them only in this browser.</p><ul><li>Submit a product listing</li><li>Set your own price and quantity</li><li>Choose an FBA or FBM fulfillment preview</li></ul></article>
+      <article class="portal-panel fulfillment-panel"><p class="eyebrow">FULFILLMENT OPTIONS</p><h2>Choose how orders ship</h2><div class="fulfillment-option"><strong>FBA · Fulfilled by Amazon</strong><p>Warehouse storage, packing, and shipping would be handled by the marketplace.</p></div><div class="fulfillment-option"><strong>FBM · Fulfilled by Merchant</strong><p>You store, pack, and ship orders directly to buyers.</p></div><p class="prototype-note">These are informational choices only. No warehouse or carrier integration is configured.</p></article>
+    </section>
+    <section class="portal-panel" id="seller-models">
+      <p class="eyebrow">SELLER BUSINESS MODELS</p>
+      <h2>Marketplace vs. Vendor</h2>
+      <p class="prototype-note">Commercial terms vary by retailer and contract. This comparison is a general model overview, not a live vendor program.</p>
+      <div class="model-comparison">
+        <article class="fulfillment-option"><h3>Third-party marketplace (3P)</h3><p>You sell directly to buyers, act as merchant of record, set your offer price, and manage your product listing and available stock. Choose FBA or FBM per listing.</p><span class="product-tag seller-tag">Interactive demo available</span></article>
+        <article class="fulfillment-option"><h3>Direct vendor / wholesale (1P)</h3><p>You supply products wholesale to the retailer under agreed terms. The retailer typically owns retail inventory and controls the consumer-facing offer; purchasing and fulfillment follow the vendor agreement.</p><span class="product-tag">Overview only · no vendor workflow</span></article>
+      </div>
+    </section>
+    <section class="seller-metrics" aria-label="Seller listing summary"><div class="stat-card"><span>Your listings</span><strong id="sellerListingCount">0</strong><small>Saved in this browser</small></div><div class="stat-card"><span>Units listed</span><strong id="sellerStockCount">0</strong><small>Demo inventory only</small></div><div class="stat-card"><span>Fulfillment</span><strong>FBA / FBM</strong><small>Selected per listing</small></div></section>
+
+    <section class="portal-panel" id="catalog">
+      <div class="section-heading"><div><p class="eyebrow">SELLER CATALOG</p><h2>Add a marketplace listing</h2></div></div>
+      <p class="prototype-note">Catalog entries are local demo data. They appear in this seller portal and the buyer discovery demo, but do not publish to the storefront or any external catalog.</p>
+      <form id="sellerListingForm" class="seller-form">
+        <label>Product name<input name="name" required maxlength="80" placeholder="e.g. Cotton travel backpack" /></label>
+        <label>Category<select name="category" required><option value="electronics">Electronics</option><option value="beauty">Beauty</option><option value="fashion">Fashion</option><option value="toys">Toys</option></select></label>
+        <label>Price (USD)<input name="price" type="number" min="0.01" step="0.01" required placeholder="24.99" /></label>
+        <label>Available units<input name="stock" type="number" min="0" step="1" required placeholder="25" /></label>
+        <label>Fulfillment<select name="fulfillment"><option value="FBM">FBM · Ship orders yourself</option><option value="FBA">FBA · Marketplace fulfillment</option></select></label>
+        <button class="primary-action" type="submit">＋ Save listing</button>
+      </form>
+      <div class="section-heading seller-list-heading"><h2>Your listings</h2><span class="muted">Edit stock or remove a demo listing.</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Units</th><th>Fulfillment</th><th>Actions</th></tr></thead><tbody id="sellerListings"></tbody></table></div>
+      <p id="sellerEmpty" class="empty-cart">No listings yet. Add a product above to see it here and in buyer discovery.</p>
+    </section>
+    </div>
+  </main>
+  <footer><div class="footer-bottom"><div class="footer-logo">shop<span>zone</span></div><p>Seller tools are a local frontend prototype — no real catalog or inventory updates occur.</p></div></footer>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+  <script src="js/seller.js"></script>
+</body>
+</html>

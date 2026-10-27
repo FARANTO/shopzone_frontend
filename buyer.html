@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buyer Hub - ShopZone</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portals.css" />
+</head>
+<body>
+  <header class="top-header">
+    <a class="logo" href="index.html">shop<span>zone</span></a>
+    <div class="buyer-welcome"><span class="small">Buyer Hub</span><strong id="buyerGreeting">Welcome</strong></div>
+    <div class="header-links">
+      <a href="seller.html">Seller Portal</a>
+      <a href="cart.html" class="cart-link">🛒 Cart <span id="cartCount">0</span></a>
+      <button class="theme-toggle" id="themeToggle" title="Switch light/dark mode">🌙</button>
+    </div>
+  </header>
+  <nav class="sub-nav"><a href="index.html">Storefront</a><a href="#discover">Discover</a><a href="#orders">Orders &amp; tracking</a><a href="seller.html">Seller Portal</a></nav>
+
+  <main class="portal-page">
+    <section id="buyerGate" class="portal-panel access-panel" hidden>
+      <p class="eyebrow">YOUR SHOPZONE ACCOUNT</p>
+      <h1>Sign in to your Buyer Hub</h1>
+      <p class="muted">Use the demo sign-in and choose the Buyer account type to view your cart, recommendations, and order tracking.</p>
+      <a class="primary-action inline-button" href="signin.html?role=buyer">Sign in as a buyer</a>
+    </section>
+
+    <div id="buyerDashboard" hidden>
+      <section class="portal-hero">
+        <div><p class="eyebrow">SHOPZONE BUYER HUB</p><h1>Your shopping, all in one place.</h1><p>Discover relevant picks, review your cart, and follow order milestones.</p></div>
+        <a class="primary-action inline-button" href="cart.html">Go to checkout</a>
+      </section>
+
+      <section class="portal-panel" id="discover">
+        <div class="section-heading"><div><p class="eyebrow">DISCOVERY</p><h2>Find your next favorite</h2></div><a href="index.html#products">Browse storefront</a></div>
+        <p class="prototype-note">Demo search runs in this browser. A production search service could rank relevance, purchase likelihood, and sponsored placement.</p>
+        <form id="buyerSearchForm" class="buyer-search"><label class="sr-only" for="buyerSearch">Search products</label><input id="buyerSearch" type="search" placeholder="Try “wireless”, “beauty”, or “shoes”" /><select id="buyerCategory" aria-label="Filter by category"><option value="all">All categories</option><option value="electronics">Electronics</option><option value="beauty">Beauty</option><option value="fashion">Fashion</option><option value="toys">Toys</option></select><button class="primary-action" type="submit">Search</button></form>
+        <div id="searchFeedback" class="muted" aria-live="polite"></div>
+        <div id="buyerProducts" class="buyer-product-grid"></div>
+      </section>
+
+      <section class="buyer-lower-grid">
+        <section class="portal-panel" id="orders"><div class="section-heading"><div><p class="eyebrow">FULFILLMENT</p><h2>Orders &amp; tracking</h2></div><a href="cart.html">View cart</a></div><p class="prototype-note">Order milestones are a local demo preview; carrier scans and notifications are not connected.</p><div id="buyerOrders"></div></section>
+        <aside class="portal-panel"><p class="eyebrow">CART &amp; INVENTORY</p><h2>Your cart</h2><p id="buyerCartSummary" class="muted"></p><p class="prototype-note">Adding an item saves it to localStorage and shows a temporary browser-only reservation preview. Inventory is not deducted.</p><a class="secondary-action inline-button" href="cart.html">Review your cart</a><h3 class="notification-heading">Notifications</h3><div id="buyerNotifications" class="notification-list"></div></aside>
+      </section>
+    </div>
+  </main>
+  <footer><div class="footer-bottom"><div class="footer-logo">shop<span>zone</span></div><p>Demo buyer experience — no live search, inventory, payment, or shipping services.</p></div></footer>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+  <script src="js/buyer.js"></script>
+</body>
+</html>

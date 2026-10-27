@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart - ShopZone</title><link rel="stylesheet" href="css/style.css" />
+  <title>Shopping Cart - ShopZone</title><link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/checkout.css" />
 </head>
 <body>
 <header class="top-header"><a class="logo" href="index.html">shop<span>zone</span></a><div class="deliver"><span class="small">Deliver to</span><strong>📍 Bangladesh</strong></div><div class="search-box"><input id="searchInput" type="search" placeholder="Search ShopZone" /><button id="searchBtn">🔍</button></div><div class="header-links"><a href="admin.html" class="admin-link"><span class="small">Manage</span><strong>Admin</strong></a><a href="signin.html" class="account-link"><span class="small">Hello, sign in</span><strong>Account &amp; Lists</strong></a><a href="cart.html" class="cart-link">🛒 <strong>Cart <span id="cartCount">0</span></strong></a><button class="theme-toggle" id="themeToggle">🌙</button></div></header>
@@ -23,11 +23,11 @@
   </div>
 
   <div id="checkoutStep3" class="checkout-layout" hidden>
-    <section class="checkout-card"><h2>Payment Method</h2><p class="muted">Choose a payment method for this demo checkout.</p><div class="payment-methods"><label class="payment-option"><input type="radio" name="payment" value="card" checked /><span>💳 Credit / Debit Card</span></label><label class="payment-option"><input type="radio" name="payment" value="stripe" /><span>🟣 Stripe</span></label><label class="payment-option"><input type="radio" name="payment" value="cod" /><span>💵 Cash on Delivery</span></label></div><div class="checkout-buttons"><button id="backToAddress" class="secondary-action">← Back</button><button id="placeOrder" class="primary-action">Place Order ✓</button></div></section>
+    <section class="checkout-card"><h2>Payment Method</h2><p class="muted">Choose a payment method for this demo checkout. No card or payment details are collected or processed.</p><div class="payment-methods"><label class="payment-option"><input type="radio" name="payment" value="card" checked /><span>💳 Credit / Debit Card (demo)</span></label><label class="payment-option"><input type="radio" name="payment" value="stripe" /><span>🟣 Stripe (demo selection only)</span></label><label class="payment-option"><input type="radio" name="payment" value="cod" /><span>💵 Cash on Delivery (demo)</span></label></div><div class="checkout-buttons"><button id="backToAddress" class="secondary-action">← Back</button><button id="placeOrder" class="primary-action">Place Demo Order ✓</button></div></section>
     <aside class="summary-card"><h2>Order Total</h2><div class="summary-line"><span>Subtotal</span><strong class="subtotal-copy">$0.00</strong></div><div class="summary-line discount"><span>Discount</span><strong class="discount-copy">-$0.00</strong></div><div class="summary-line"><span>Shipping Fee</span><strong class="shipping-copy">$0.00</strong></div><hr /><div class="summary-line total"><span>Total</span><strong class="total-copy">$0.00</strong></div></aside>
   </div>
 
-  <div id="orderSuccess" class="order-success" hidden><div class="success-icon">✓</div><h2>Order placed successfully!</h2><p>Your demo order has been created. In the full system this is where the Order and Payment services would process the transaction.</p><a href="index.html" class="primary-action inline-button">Continue Shopping</a></div>
+  <div id="orderSuccess" class="order-success" hidden><div class="success-icon">✓</div><h2>Demo order saved!</h2><p>Your order was saved in this browser only. No payment was processed or shipment created.</p><a href="buyer.html#orders" class="primary-action inline-button">View order tracking</a><a href="index.html" class="secondary-action inline-button">Continue Shopping</a></div>
 </main>
 <footer><div class="footer-main"><div><h3>ShopZone</h3><a href="index.html">Homepage</a><a href="#">Contact</a></div><div><h3>Products</h3><a href="index.html#products">All Products</a><a href="#">New Arrivals</a></div><div><h3>Company</h3><a href="#">About</a><a href="#">Privacy</a></div><div><h3>Account</h3><a href="signin.html">Sign In</a><a href="admin.html">Admin</a></div></div><div class="footer-bottom"><div class="footer-logo">shop<span>zone</span></div><p>© 2026 ShopZone. Educational e-commerce prototype.</p></div></footer>
 <div id="toast" class="toast"></div><script src="js/script.js"></script><script src="js/cart.js"></script>

@@ -10,6 +10,8 @@ product.html     -> Dynamic product detail page (`?id=1`, `?id=2`, etc.)
 signin.html      -> Sign-in page
 cart.html        -> 3-step shopping cart / checkout
 admin.html       -> Admin dashboard panel
+buyer.html       -> Buyer Hub (requires demo Buyer sign-in)
+seller.html      -> Marketplace Seller Portal (requires demo Seller sign-in)
 ```
 
 ## Main features
@@ -30,6 +32,10 @@ admin.html       -> Admin dashboard panel
 - Light/dark mode can be switched from the navbar and is persisted in `localStorage`.
 - Sign-in is currently a frontend demo and does not authenticate against a backend.
 - Product/order/payment/admin actions are frontend prototypes and can later connect to the microservices project.
+- Buyer Hub (`buyer.html`) provides browser-only product discovery, a buyer account gate, cart summary, demo orders, and shipment milestone previews.
+- Seller Portal (`seller.html`) compares third-party marketplace and direct-vendor models, and provides local marketplace listing management with seller-set prices, stock, and FBA/FBM fulfillment choices. Seller listings are visible in Buyer Hub discovery.
+- Demo sign-in offers Buyer and Marketplace Seller roles and saves the selected role in `localStorage`; it is not authentication or authorization.
+- Search ranking, inventory reservation, payment, orders, and fulfillment notifications are simulated in the browser. No Elasticsearch/OpenSearch, Redis, payment gateway, warehouse, carrier, email/SMS, or Kafka service is connected.
 
 ## Run locally
 
@@ -48,20 +54,25 @@ Open `index.html` in a browser.
 ## Project structure
 
 ```text
-shopzone_amazon_like_frontend/
+shopzone_frontend/
 ├── index.html
 ├── product.html
 ├── signin.html
 ├── cart.html
 ├── admin.html
+├── buyer.html
+├── seller.html
 ├── css/
-│   └── style.css
+│   ├── style.css
+│   ├── portals.css
+│   └── checkout.css
 ├── js/
 │   ├── script.js
 │   ├── product.js
 │   ├── cart.js
-│   └── admin.js
-└── assets/
+│   ├── admin.js
+│   ├── buyer.js
+│   └── seller.js
 ```
 
 ## Connecting to the real microservices later
